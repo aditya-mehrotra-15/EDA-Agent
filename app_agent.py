@@ -6,6 +6,7 @@ from langchain_community.callbacks import StreamlitCallbackHandler
 from config.setup import setup_environment
 from tools.eda_tool import create_eda_tool
 from tools.viz_tool import create_viz_tool
+from tools.python_exec_tool import create_python_exec_tool
 
 # Initialize session state
 if "data" not in st.session_state:
@@ -19,7 +20,8 @@ llm = setup_environment()
 # Create tools
 tools = [
     create_eda_tool(llm),
-    create_viz_tool(llm)
+    create_viz_tool(llm),
+    create_python_exec_tool()
 ]
 
 # Initialize agent
