@@ -6,6 +6,7 @@ from langchain_community.callbacks import StreamlitCallbackHandler
 from config.setup import setup_environment
 from tools.eda_tool import create_eda_tool
 from tools.viz_tool import create_viz_tool
+from tools.google_charts_tool import create_google_charts_tool
 from tools.python_exec_tool import create_python_exec_tool
 
 # Initialize session state
@@ -20,6 +21,7 @@ llm = setup_environment()
 # Create tools
 tools = [
     create_eda_tool(llm),
+    create_google_charts_tool(llm),
     create_viz_tool(llm),
     create_python_exec_tool()
 ]
@@ -31,7 +33,7 @@ agent = initialize_agent(
     agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
     verbose=True,
     handle_parsing_errors=True,
-    max_iterations=3,
+    max_iterations=5,
     early_stopping_method="generate",
 )
 

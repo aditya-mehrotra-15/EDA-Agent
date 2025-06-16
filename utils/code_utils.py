@@ -6,8 +6,8 @@ def extract_code(response: str) -> str:
     Pull out the first Python code block (```python ... ```) or a
     `Code:` section from an LLM response.
     """
-    # 1) Look for a ```python fenced block
-    m = re.search(r'```python(.*?)```', response, re.DOTALL)
+    # 1) Look for a ```python fenced block (with or without colon)
+    m = re.search(r'```python:?(.*?)```', response, re.DOTALL)
     if not m:
         # 2) Fallback to any ```...``` block
         m = re.search(r'```(.*?)```', response, re.DOTALL)
