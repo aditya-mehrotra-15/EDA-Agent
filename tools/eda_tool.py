@@ -35,9 +35,10 @@ def create_eda_tool(llm):
                          metrics=metrics, model_selection=model_selection)
         try:
             exec(code_snippet, {}, namespace)
-        except Exception:
+        except Exception as e:
             st.error("Error executing EDA code:")
             st.code(code_snippet, language="python")
+            st.error(f"Error details: {str(e)}")
             return f"Error: {traceback.format_exc()}"
 
         result = namespace.get("result")
