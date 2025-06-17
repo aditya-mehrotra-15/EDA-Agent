@@ -4,7 +4,7 @@ Primarily made using langchain's orchestration. But langgraph is recommended for
 
 Deployed on https://edaagent.streamlit.app/ but too slow there. Fork it rather.
 
-Fork to your desktop, go to the directory path in the terminal, and then:
+Clone to your desktop, go to the directory path in the terminal, and then:
 ```
 pip install -r requirements.txt 
 ```
