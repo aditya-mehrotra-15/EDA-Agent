@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 from langchain.agents import initialize_agent, AgentType
 from langchain_community.callbacks import StreamlitCallbackHandler
-
 from config.setup import setup_environment
 from tools.eda_tool import create_eda_tool
 from tools.viz_tool import create_viz_tool

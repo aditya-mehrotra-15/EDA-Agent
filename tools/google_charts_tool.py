@@ -93,7 +93,6 @@ def create_google_charts_tool(llm):
     return Tool(
         name="Google Charts Visualization Tool",
         func=viz_tool_func,
-        description="""Create interactive visualizations using Google Charts API with Plotly fallback.
-        The agent will determine the appropriate chart type, columns, and options based on the data and request.
-        Input: visualization request string (e.g., 'Show a line chart of sales over time')"""
+        description="""Create interactive visualizations using Google Charts API with Plotly as a fallback.
+        Input: visualization request string e.g., 'Show a line chart of sales over time'"""
     ) 
